@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  postgres-birdnest:
+    container_name: "birdnest"
+    image: postgres:latest
+    volumes:
+      - postgres-birdnest-volume:/var/lib/postgresql/data
+    restart: on-failure
+    environment:
+      POSTGRES_DB: hlepik-birdnest
+      POSTGRES_USER: hlepik
+      POSTGRES_PASSWORD: postgres-birdnest
+    ports:
+      # this maps external:internal, but the docker created network between images is connected directly - using the original ports
+      # so use external for connecting with admin tools - docker will forward connection to internal port
+      - "5432:5432"
+
+
+  webapp-birdnest:
+    container_name: webapp-birdnest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - webapp-birdnest-volume:/app/wwwroot/uploads
+      - static-volume:/app/content/uploads
+
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: on-failure
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__DefaultConnection: "Server=postgres-birdnest,5432;User Id=hlepik;Password=postgres-birdnest;Database=hlepik-birdnest"
+    ports:
+      - "18080:80"
+    depends_on:
+      - "postgres-birdnest"
+
+
+volumes:
+  postgres-birdnest-volume:
+  webapp-birdnest-volume:
+  static-volume:
+
+
