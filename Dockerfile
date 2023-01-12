@@ -58,7 +58,6 @@ COPY  WebApp/. ./WebApp/
 WORKDIR /source/WebApp
 RUN dotnet publish -c release -o /app --no-restore
 
-
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-focal
 
@@ -71,8 +70,8 @@ RUN echo $TZ > /etc/timezone && \
     rm /etc/localtime && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata && \
-    apt-get clean
-
+    apt-get clean \
 WORKDIR /app
 COPY --from=build /app ./
+
 ENTRYPOINT ["dotnet", "WebApp.dll"]

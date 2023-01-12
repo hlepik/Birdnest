@@ -57,7 +57,10 @@ var app = builder.Build();
 using var serviceScope =
     app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
 using var ctx = serviceScope.ServiceProvider.GetService<AppDbContext>();
-
+ if (ctx!.Database.GetPendingMigrations().Any())
+ {
+     ctx.Database.Migrate();
+ }
 
 
 // Configure the HTTP request pipeline.
