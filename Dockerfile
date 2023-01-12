@@ -62,6 +62,7 @@ RUN dotnet publish -c release -o /app --no-restore
 # final stage/image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-focal
 
+
 # set timezone
 # https://serverfault.com/questions/683605/docker-container-time-timezone-will-not-reflect-changes
 ENV TZ 'Europe/Tallinn'
