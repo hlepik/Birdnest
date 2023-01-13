@@ -73,5 +73,5 @@ RUN echo $TZ > /etc/timezone && \
     apt-get clean \
 WORKDIR /app
 COPY --from=build /app ./
-
+ENV ASPNETCORE_URLS http://*:$PORT
 ENTRYPOINT ["dotnet", "WebApp.dll"]

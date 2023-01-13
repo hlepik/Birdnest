@@ -51,8 +51,12 @@ builder.Services.AddApiVersioning(options => { options.ReportApiVersions = true;
 builder.Services.AddVersionedApiExplorer(options => { options.GroupNameFormat = "'v'VVV"; });
 
 
-
 var app = builder.Build();
+string port = Environment.GetEnvironmentVariable("PORT")!;
+if (!string.IsNullOrWhiteSpace(port))
+{
+    app.Urls.Add("http://*:" + port);
+}
 
 using var serviceScope =
     app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
