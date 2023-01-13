@@ -33,7 +33,7 @@ services:
       ASPNETCORE_ENVIRONMENT: "Development"
       ConnectionStrings__DefaultConnection: "Server=postgres-birdnest,5432;User Id=hlepik;Password=postgres-birdnest;Database=hlepik-birdnest"
     ports:
-      - "19090:90"
+      - "443"
     depends_on:
       - "postgres-birdnest"
 
@@ -46,7 +46,7 @@ services:
     ports:
       # this maps external:internal, but the docker created network between images is connected directly - using the original ports
       # so use external for connecting with admin tools - docker will forward connection to internal port
-      - "80:80"
+      - "80"
 
 volumes:
   postgres-birdnest-volume:
