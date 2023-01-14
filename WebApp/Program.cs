@@ -52,16 +52,17 @@ builder.Services.AddVersionedApiExplorer(options => { options.GroupNameFormat = 
 
 
 var app = builder.Build();
-string port = Environment.GetEnvironmentVariable("PORT")!;
-if (!string.IsNullOrWhiteSpace(port))
-{
-    app.Urls.Add("http://*:" + port);
-}
+
 
 using var serviceScope =
     app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
 using var ctx = serviceScope.ServiceProvider.GetService<AppDbContext>();
+if (ctx != null)
+{
+    ctx.Database.Migrate();
 
+
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
