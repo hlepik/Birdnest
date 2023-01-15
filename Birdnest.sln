@@ -28,11 +28,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{F276841F-CAB3-4EC2-9004-4366160E6F0B}"
 	ProjectSection(SolutionItems) = preProject
-		Frontend\.gitignore = Frontend\.gitignore
-		Frontend\package.json = Frontend\package.json
-		Frontend\package-lock.json = Frontend\package-lock.json
-		Frontend\tsconfig.json = Frontend\tsconfig.json
-		Frontend\webpack.config.js = Frontend\webpack.config.js
 		Frontend\static\css\main.195e4863.css = Frontend\static\css\main.195e4863.css
 		Frontend\static\css\main.195e4863.css.map = Frontend\static\css\main.195e4863.css.map
 		Frontend\static\js\main.52684030.js = Frontend\static\js\main.52684030.js
@@ -40,8 +35,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{F2
 		Frontend\static\js\main.52684030.js.LICENSE.txt = Frontend\static\js\main.52684030.js.LICENSE.txt
 		Frontend\static\js\787.07737b41.chunk.js = Frontend\static\js\787.07737b41.chunk.js
 		Frontend\static\js\main.52684030.js.map = Frontend\static\js\main.52684030.js.map
-		Frontend\asset-manifest.json = Frontend\asset-manifest.json
-		Frontend\index.html = Frontend\index.html
 	EndProjectSection
 EndProject
 Global
