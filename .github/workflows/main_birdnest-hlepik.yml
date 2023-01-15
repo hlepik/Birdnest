@@ -22,15 +22,15 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v1
       with:
-        registry: https://hlepik.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_a4d1e123a2104cc3b731cac6c7c9d722 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_3e604593bbed4b74840b4a695661924c }}
+        registry: https://hlepik1.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_2df17cf3f6004ddfbb3572ab84c52409 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_7eca5dc872074a4cbcf4525f4a2a1648 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: hlepik.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_a4d1e123a2104cc3b731cac6c7c9d722 }}/birdnest3:${{ github.sha }}
+        tags: hlepik1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_2df17cf3f6004ddfbb3572ab84c52409 }}/birdnest:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'birdnest-hlepik'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_36720e28e43e4af886f56a537ceac148 }}
-        images: 'hlepik.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_a4d1e123a2104cc3b731cac6c7c9d722 }}/birdnest3:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_b0593f77f32749bdaa72c5c64b1f1032 }}
+        images: 'hlepik1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_2df17cf3f6004ddfbb3572ab84c52409 }}/birdnest:${{ github.sha }}'
