@@ -7,7 +7,7 @@ public class AppDbContextFactory: IDesignTimeDbContextFactory<AppDbContext>
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
 
         var connectionStr =
-            "Server=localhost,5432;User Id=hlepik;Password=postgres-birdnest;Database=hlepik-birdnest";
+            "Server=hlepik-birdnest.postgres.database.azure.com;Database=birdnest-hlepik;Port=5432;User Id=hlepik;Password=Birdnest123;Ssl Mode=VerifyFull;";
         optionsBuilder.UseNpgsql(connectionStr);
 
         return new AppDbContext(optionsBuilder.Options);

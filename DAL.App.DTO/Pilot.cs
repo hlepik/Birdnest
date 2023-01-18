@@ -16,4 +16,6 @@ public class Pilot: DomainEntityId
     public DateTime Time { get; set; }
 
     public double Distance { get; set; }
+    public double PositionX { get; set; }
+    public double PositionY { get; set; }
 }

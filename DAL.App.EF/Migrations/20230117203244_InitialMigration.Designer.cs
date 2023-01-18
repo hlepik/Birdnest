@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DAL.App.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230103114938_InitialMigration")]
+    [Migration("20230117203244_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,6 +51,12 @@ namespace DAL.App.EF.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
+
+                    b.Property<double>("PositionX")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("PositionY")
+                        .HasColumnType("double precision");
 
                     b.Property<DateTime>("Time")
                         .HasColumnType("timestamp with time zone");

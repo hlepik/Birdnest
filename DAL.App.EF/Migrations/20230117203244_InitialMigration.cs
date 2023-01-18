@@ -19,7 +19,9 @@ namespace DAL.App.EF.Migrations
                     PhoneNumber = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: false),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: false),
                     Time = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    Distance = table.Column<double>(type: "double precision", nullable: false)
+                    Distance = table.Column<double>(type: "double precision", nullable: false),
+                    PositionX = table.Column<double>(type: "double precision", nullable: false),
+                    PositionY = table.Column<double>(type: "double precision", nullable: false)
                 },
                 constraints: table =>
                 {

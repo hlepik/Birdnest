@@ -26,17 +26,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Base", "Domain.Base\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ECBA8CA3-185C-41BF-A9FC-9FF9BFD12A33}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{F276841F-CAB3-4EC2-9004-4366160E6F0B}"
-	ProjectSection(SolutionItems) = preProject
-		Frontend\static\css\main.195e4863.css = Frontend\static\css\main.195e4863.css
-		Frontend\static\css\main.195e4863.css.map = Frontend\static\css\main.195e4863.css.map
-		Frontend\static\js\main.52684030.js = Frontend\static\js\main.52684030.js
-		Frontend\static\js\787.07737b41.chunk.js.map = Frontend\static\js\787.07737b41.chunk.js.map
-		Frontend\static\js\main.52684030.js.LICENSE.txt = Frontend\static\js\main.52684030.js.LICENSE.txt
-		Frontend\static\js\787.07737b41.chunk.js = Frontend\static\js\787.07737b41.chunk.js
-		Frontend\static\js\main.52684030.js.map = Frontend\static\js\main.52684030.js.map
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

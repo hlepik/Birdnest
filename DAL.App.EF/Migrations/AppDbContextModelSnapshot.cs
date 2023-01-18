@@ -50,6 +50,12 @@ namespace DAL.App.EF.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("character varying(20)");
 
+                    b.Property<double>("PositionX")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("PositionY")
+                        .HasColumnType("double precision");
+
                     b.Property<DateTime>("Time")
                         .HasColumnType("timestamp with time zone");
 

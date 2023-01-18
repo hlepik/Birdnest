@@ -45,7 +45,9 @@ public class PilotRepository : BaseRepository<Pilot, Domain.App.Pilot, AppDbCont
                     Email = pilot.Email,
                     Id = pilot.PilotId,
                     Time = DateTime.UtcNow,
-                    Distance = radius
+                    Distance = radius,
+                    PositionX = positionX,
+                    PositionY = positionY
 
                 };
                 RepoDbSet.Add(newPilot);
@@ -57,6 +59,8 @@ public class PilotRepository : BaseRepository<Pilot, Domain.App.Pilot, AppDbCont
                 {
                     updatePilot.Time = DateTime.UtcNow;
                     updatePilot.Distance = radius;
+                    updatePilot.PositionX = positionX;
+                    updatePilot.PositionY = positionY;
                 }
                 else
                 {
@@ -77,7 +81,9 @@ public class PilotRepository : BaseRepository<Pilot, Domain.App.Pilot, AppDbCont
                Email = p.Email,
                PhoneNumber = p.PhoneNumber,
                Time = p.Time,
-               Distance = p.Distance
+               Distance = p.Distance,
+               PositionX = p.PositionX,
+               PositionY = p.PositionY
 
             });
         return await resQuery1.ToListAsync();
@@ -95,7 +101,9 @@ public class PilotRepository : BaseRepository<Pilot, Domain.App.Pilot, AppDbCont
                     Email = p.Email,
                     PhoneNumber = p.PhoneNumber,
                     Time = p.Time,
-                    Distance = p.Distance
+                    Distance = p.Distance,
+                    PositionX = p.PositionX,
+                    PositionY = p.PositionY
 
                 }).Where(x => x.Time > currentTime);
 

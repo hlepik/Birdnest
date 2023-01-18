@@ -24,4 +24,6 @@ public class Pilot : DomainEntityId
     [DataType(DataType.DateTime)]
     public DateTime Time { get; set; }
     public double Distance { get; set; }
+    public double PositionX { get; set; }
+    public double PositionY { get; set; }
 }
